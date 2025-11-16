@@ -99,6 +99,8 @@ See 'cf2-print --help' for more information.
 
 </details>
 
+---
+
 ### Setup
 
 <details>
