@@ -131,20 +131,24 @@ In the new tab:
 
 ```
 > ls -1F | grep '*'
+cf1-print*
+cf2-print*
 CmdArgLibMacrosModule-tool*
-mf1-basic*
-mf2-man*
-mf3-enums*
-mf4-lists*
-mf5-positionals*
-mf6-show-macros*
-mf7-errors*
-mf8-sed*
 ```
 
 ```
-> ./mf1-basic --version
-  version 0.1.0 - 2025-10-14
+> ./cf1-print --help
+DESCRIPTION: Print a phrase multiple times followed by the number of words in
+             the phrase.
+
+USAGE: cf1-print [-iuh] [-r <count>] <phrase>
+
+PARAMETERS:
+  <phrase>              The phrase to be printed.
+  -i                    Print a line counter before each phrase.
+  -u                    Print output in upper case.
+  -r/--repeats <count>  Times to print each phrase (default: 1).
+  -h/--help             Print this help screen.
 ```
 
 </details>
