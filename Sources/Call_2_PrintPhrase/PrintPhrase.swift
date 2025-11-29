@@ -58,14 +58,7 @@ struct PrintCount {
         .parameter("help","Print this help screen")
     ]
 
-    static let helpMetaFlag = MetaFlag(helpElements: helpElements, typeFormatter: Self.formatter)
-
-    #if DEBUG
-    static let formatter = SymbolFormatter(textCase: .upper, snakeSeparator: "_")
-    #else
-//     static let formatter = SymbolFormatter(textCase: .lower, style: .underline)
-    static let formatter = SymbolFormatter(textCase: .upper, snakeSeparator: "_")
-    #endif
+    static let helpMetaFlag = MetaFlag(helpElements: helpElements)
 
     static func main() async {
         do {
