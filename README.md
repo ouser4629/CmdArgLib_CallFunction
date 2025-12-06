@@ -1,6 +1,6 @@
 ## CmdArgLib_CallFunction
 
-This package contains examples that use the `CallFunction` macro provided by the [Command Argument Library](https://github.com/ouser4629/cmd-arg-lib26).
+This package contains examples that use the `CallFunction` macro provided by the [Command Argument Library](https://github.com/ouser4629/cmd-arg-lib).
 
 This macro is basically the same as the `MainFunction` macro except that the peer 
 function is `call(names:tokens)` instead of`main()`. The `call` function allows you to 
