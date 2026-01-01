@@ -27,7 +27,7 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/ouser4629/cmd-arg-lib.git", from: "0.2.5")
+        .package(url: "https://github.com/ouser4629/cmd-arg-lib.git", from: "0.2.8")
     ],
 
     targets: [
