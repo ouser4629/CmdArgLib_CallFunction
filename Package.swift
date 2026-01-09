@@ -15,6 +15,7 @@
 // swift-tools-version: 6.2
 import PackageDescription
 
+//let cmdArgLib = "CMD_ARG_LIB"
 let cmdArgLib = "cmd-arg-lib"
 
 let package = Package(
@@ -27,7 +28,8 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/ouser4629/cmd-arg-lib.git", from: "0.2.8")
+        .package(url: "https://github.com/ouser4629/cmd-arg-lib.git", from: "0.3.1")
+//        .package(path: "../../\(cmdArgLib)"),
     ],
 
     targets: [

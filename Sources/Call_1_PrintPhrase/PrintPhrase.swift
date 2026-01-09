@@ -56,9 +56,9 @@ struct PrintPhrase {
 
     static func main() {
         do {
-            var (_, tokens) = commandLineNameAndWords()
-            if tokens.isEmpty {tokens = ["--help"]}
-            try call(tokens: tokens)
+            var (_, words) = commandLineNameAndWords()
+            if words.isEmpty {words = ["--help"]}
+            try call(words: words)
         } catch {
             printErrorAndExit(for: error, callNames: ["c1Print"])
         }

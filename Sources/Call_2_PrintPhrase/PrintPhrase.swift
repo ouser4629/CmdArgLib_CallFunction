@@ -62,9 +62,9 @@ struct PrintCount {
 
     static func main() async {
         do {
-            var (_, tokens) = commandLineNameAndWords()
-            if tokens.isEmpty {tokens = ["--help"]}
-            let wordCount = try await call(tokens: tokens)
+            var (_, words) = commandLineNameAndWords()
+            if words.isEmpty {words = ["--help"]}
+            let wordCount = try await call(words: words)
             print("--> The phrase has \(wordCount) words")
         } catch {
             printErrorAndExit(for: error, callNames: ["c2Print"])
