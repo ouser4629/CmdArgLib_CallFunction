@@ -1,0 +1,67 @@
+// Copyright (c) 2025 Peter Buenafuente Summerland
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import CmdArgLib
+import CmdArgLibMacros
+import Foundation
+
+typealias Count = Int
+typealias Phrase = String
+
+@main
+struct PrintPhrase {
+
+    @CallFunction
+    static func cf1Print(
+        i include: Flag,
+        u upper: Flag,
+        r__repeats repeats: Count = 1,
+        _ phrase: Phrase,
+        h__help help: MetaFlag = helpMetaFlag)
+    {
+        for counter in 1...(max(repeats, 1)) {
+            let label = include ? "\(counter) " : ""
+            var line = "--> \(label)\(phrase)"
+            if upper {
+                line = line.uppercased()
+            }
+            print(line)
+        }
+        print("--> The phrase has \(phrase.components(separatedBy: .whitespaces).count) words")
+    }
+
+    static let helpElements: [ShowElement] = [
+        .text("DESCRIPTION:", "Print a phrase multiple times followed by the number of words in the phrase."),
+        .synopsis("\nUSAGE:"),
+        .text("\nPARAMETERS:"),
+        .parameter("phrase", "The phrase to be printed"),
+        .parameter("include", "Print a line counter before each phrase"),
+        .parameter("upper", "Print output in upper case"),
+        .parameter("repeats", "Times to print each phrase"),
+        .parameter("help","Print this help screen"),
+    ]
+
+    static let helpMetaFlag = MetaFlag(helpElements: helpElements)
+
+    static func main() {
+        do {
+            var (_, words) = commandLineNameAndWords()
+            if words.isEmpty {words = ["--help"]}
+            try call(words: words)
+        } catch {
+            Exception.printAndExit(for: error, callNames: ["c1Print"])
+        }
+        return
+    }
+}
