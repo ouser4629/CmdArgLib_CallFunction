@@ -1,13 +1,13 @@
 {
-  "originHash" : "8a32f704f472c6ea252b310c1cea6e0261219937236569ff1bdf49a3667423f0",
+  "originHash" : "52abc020e34b48a19e1e02122f2d20446bb0600c741fa1b685a228bf3857b158",
   "pins" : [
     {
       "identity" : "cmd-arg-lib",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ouser4629/cmd-arg-lib.git",
       "state" : {
-        "revision" : "b9f0c671274e48e892986b1791db39a3499aa09e",
-        "version" : "0.4.1"
+        "revision" : "ddcf00ac236542fe3b85ae2ec614fd4bbe82cd98",
+        "version" : "0.4.3"
       }
     },
     {
